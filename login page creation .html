@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      table {
+        width: 40%;
+        margin: auto;
+      }
+      .container {
+        width: 40%;
+        margin: auto;
+        padding: 8px 0px;
+        background-color: rgb(223, 228, 86);
+      }
+      th {
+        padding: 10px;
+        text-align: right;
+        color: rgb(177, 245, 153);
+      }
+      td {
+        padding: 10px;
+        text-align: left;
+        color: rgb(177, 245, 153);
+      }
+      div {
+        margin: right;
+      }
+      .partTwo {
+        background-color: rgb(21, 21, 48);
+      }
+      .button1 {
+        padding: 10px 18px;
+        background-color: rgb(140, 235, 140);
+        border: none;
+      }
+      .button2 {
+        padding: 10px 18px;
+        background-color: red;
+        border: none;
+        margin-left: 25px;
+        margin-right: 10px;
+      }
+      .bottom {
+        width: 40%;
+        margin: auto;
+        padding: 10px 0px;
+        display: flex;
+        justify-content: flex-end;
+        background-color: rgb(223, 228, 86);
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div>
+        <h3 class="container"><b>Sign Up</b></h3>
+      </div>
+      <table class="partTwo">
+        <tr>
+          <th>
+            <label for="Uname"><b>First Name :</b></label>
+          </th>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter First Name"
+              name="uname"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="Uname"><b>Second Name :</b></label>
+          </th>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Second Name"
+              name="uname"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="DOB"><b>Date of birth :</b></label>
+          </th>
+          <td>
+            <input
+              type="number"
+              id="quantity"
+              name="quantity"
+              min="1"
+              max="31"
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="Gender"><b>Gender :</b></label>
+          </th>
+          <td>
+            <input
+              type="radio"
+              placeholder="Enter Gender"
+              name="Gender"
+              required
+            />
+            <label for="html">Male</label>
+            <input
+              type="radio"
+              placeholder="Enter Gender"
+              name="Gender"
+              required
+            />
+            <label for="html">Female</label>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="Country"><b>Country :</b></label>
+          </th>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Country"
+              name="Country"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="Mailid"><b>E-Mail :</b></label>
+          </th>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Mailid "
+              name="Mailid"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="Cnumber"><b>Contact Number :</b></label>
+          </th>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Contact Number"
+              name="Cnumber"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="Password"><b>Password :</b></label>
+          </th>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Password"
+              name="Password"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <th>
+            <label for="Password"><b>Confirm Password :</b></label>
+          </th>
+          <td>
+            <input
+              type="text"
+              placeholder="Enter Confirm Password"
+              name="Password"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <th></th>
+          <td>
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" />
+            <label for="vehicle1"> I Agree to the Terms of Use</label>
+          </td>
+        </tr>
+      </table>
+      <div class="bottom">
+        <button class="button1">Submit</button>
+        <button class="button2">Cancel</button>
+      </div>
+    </div>
+  </body>
+</html>

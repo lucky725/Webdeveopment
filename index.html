@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+  </head>
+  <body>
+    <main>
+      <script>
+        var data = []; // Array to store submitted data
+
+        function validateForm() {
+          let X = document.forms["myForm"]["fname"].value;
+          let Y = document.forms["myForm"]["Lname"].value;
+          let Z = document.forms["myForm"]["Email"].value;
+
+          if (X == "" || Y == "" || Z == "") {
+            alert("All fields must be filled out");
+            return false;
+          } else {
+            var newData = {
+              first: X,
+              last: Y,
+              email: Z,
+            };
+            data.push(newData); // Store new data in the array
+
+            displayValues();
+            return false;
+          }
+        }
+
+        function displayValues() {
+          var table = document.getElementById("dataTable");
+          table.innerHTML =
+            "<tr><th>First Name</th><th>Last Name</th><th>Email</th></tr>";
+
+          data.forEach(function (item) {
+            var newRow = table.insertRow(-1);
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+
+            cell1.innerHTML = item.first;
+            cell2.innerHTML = item.last;
+            cell3.innerHTML = item.email;
+          });
+
+          var form = document.forms["myForm"];
+          form.style.display = "none"; // Hide the form
+
+          var tableContainer = document.getElementById("tableContainer");
+          tableContainer.style.display = "block"; // Display the table
+
+          var backButton = document.getElementById("backButton");
+          backButton.style.display = "inline";
+
+          var heading = document.getElementById("heading");
+          heading.style.display = "none"; // Hide the heading
+        }
+
+        function goBack() {
+          var form = document.forms["myForm"];
+          form.style.display = "block"; // Show the form
+
+          var tableContainer = document.getElementById("tableContainer");
+          tableContainer.style.display = "none"; // Hide the table
+
+          var backButton = document.getElementById("backButton");
+          backButton.style.display = "none";
+
+          var heading = document.getElementById("heading");
+          heading.style.display = "block"; // Show the heading
+        }
+      </script>
+
+      <h2 id="heading">Login Form</h2>
+      <form name="myForm" onsubmit="return validateForm()" method="post">
+        Fname: <input type="text" name="fname" /><br /><br />
+        Lname: <input type="text" name="Lname" /><br /><br />
+        Email: <input type="text" name="Email" /><br /><br />
+        <button type="submit" id="submitButton" disabled>Submit</button>
+      </form>
+
+      <button onclick="goBack()" style="display: none" id="backButton">
+        Back
+      </button>
+
+      <div id="tableContainer" style="display: none">
+        <h2>Submitted Data</h2>
+        <table border="1" id="dataTable">
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+    <script>
+      // Enable submit button if all inputs are filled
+      document.addEventListener("input", function () {
+        var submitButton = document.getElementById("submitButton");
+        var inputs = document.querySelectorAll('input[type="text"]');
+        var allFilled = true;
+        inputs.forEach(function (input) {
+          if (input.value === "") {
+            allFilled = false;
+          }
+        });
+        if (allFilled) {
+          submitButton.disabled = false;
+        } else {
+          submitButton.disabled = true;
+        }
+      });
+    </script>
+  </body>
+</html>
